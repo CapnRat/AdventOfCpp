@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <chrono>
 #include "SolutionRegistry.h"
 
 std::string get_input(uint id) {
@@ -21,8 +22,13 @@ std::string get_input(uint id) {
 int main() {
     for (const auto& solution : SolutionRegistry::GetSolutions()) {
         auto id = solution.first;
+        auto input = get_input(id);
 
-        std::cout << std::to_string(id) << " : " << solution.second(get_input(id)) << std::endl;
+        auto start = std::chrono::steady_clock::now();
+        auto output = solution.second(input);
+        auto end = std::chrono::steady_clock::now();
+        std::cout << std::to_string(id) << " : " << output << " : " << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() << "us" << std::endl;
+
     }
     return 0;
 }
