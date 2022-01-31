@@ -4,7 +4,7 @@
 
 
 #include <string>
-#include "../SolutionRegistry.h"
+#include "../Common.h"
 
 SOLUTION(2015, 01, 1) {
     int floor = 0;

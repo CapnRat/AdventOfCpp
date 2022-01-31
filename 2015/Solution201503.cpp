@@ -4,7 +4,7 @@
 
 #include <unordered_set>
 #include <set>
-#include "../SolutionRegistry.h"
+#include "../Common.h"
 
 struct point2 {
     int x, y;

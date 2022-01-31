@@ -4,7 +4,7 @@
 
 #include <string>
 #include <sstream>
-#include "../SolutionRegistry.h"
+#include "../Common.h"
 
 typedef std::tuple <int, int, int> dimensions;
 

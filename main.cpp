@@ -2,7 +2,7 @@
 #include <fstream>
 #include <filesystem>
 #include <chrono>
-#include "SolutionRegistry.h"
+#include "Common.h"
 
 std::string get_input(uint id) {
     std::filesystem::path filepath{"Input/" + std::to_string((id / 10) % 200000) + ".txt"};
