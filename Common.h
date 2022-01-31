@@ -5,6 +5,7 @@
 #ifndef ADVENTOFCPP_COMMON_H
 #define ADVENTOFCPP_COMMON_H
 
+#include <iostream>
 #include <stdexcept>
 #include <string>
 #include "SolutionRegistry.h"

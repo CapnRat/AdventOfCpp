@@ -13,19 +13,25 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+## OpenSSL for crypto library
+include("${CMAKE_ROOT}/Modules/FindOpenSSL.cmake")
+
 ## Source
-set(ADVENTOFCPP_SOURCES SolutionRegistry.cpp SolutionRegistry.h 2015/Solution201501.cpp 2015/Solution201502.cpp 2015/Solution201503.cpp Common.h)
+set(ADVENTOFCPP_SOURCES SolutionRegistry.cpp SolutionRegistry.h 2015/Solution201501.cpp 2015/Solution201502.cpp 2015/Solution201503.cpp Common.h 2015/Solution201504.cpp)
 
 ## Executable
 add_executable(AdventOfCpp main.cpp ${ADVENTOFCPP_SOURCES})
 add_custom_target(copy-input-files ALL
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/Input ${CMAKE_BINARY_DIR}/Input)
 add_dependencies(AdventOfCpp copy-input-files)
+target_link_libraries(AdventOfCpp ${OPENSSL_CRYPTO_LIBRARY})
+target_include_directories(AdventOfCpp PRIVATE ${OPENSSL_INCLUDE_DIR})
 
 ## Test Executable
 enable_testing()
 add_executable(AdventOfCpp_Test ${ADVENTOFCPP_SOURCES} SolutionTesting.h)
 target_compile_definitions(AdventOfCpp_Test PUBLIC TEST)
-target_link_libraries(AdventOfCpp_Test gtest_main)
+target_link_libraries(AdventOfCpp_Test gtest_main ${OPENSSL_CRYPTO_LIBRARY})
+target_include_directories(AdventOfCpp_Test PRIVATE ${OPENSSL_INCLUDE_DIR})
 include(GoogleTest)
 gtest_discover_tests(AdventOfCpp_Test)
