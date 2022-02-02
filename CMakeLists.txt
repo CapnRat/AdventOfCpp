@@ -20,7 +20,7 @@ endif()
 include("${CMAKE_ROOT}/Modules/FindOpenSSL.cmake")
 
 ## Source
-set(ADVENTOFCPP_SOURCES SolutionRegistry.cpp SolutionRegistry.h 2015/Solution201501.cpp 2015/Solution201502.cpp 2015/Solution201503.cpp Common.h 2015/Solution201504.cpp)
+set(ADVENTOFCPP_SOURCES SolutionRegistry.cpp SolutionRegistry.h 2015/Solution201501.cpp 2015/Solution201502.cpp 2015/Solution201503.cpp Common.h 2015/Solution201504.cpp 2015/Solution201505.cpp)
 
 ## Executable
 add_executable(AdventOfCpp main.cpp ${ADVENTOFCPP_SOURCES})
