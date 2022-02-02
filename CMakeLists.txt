@@ -14,6 +14,9 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 ## OpenSSL for crypto library
+if(APPLE)
+    set(OPENSSL_ROOT_DIR /opt/homebrew/opt/openssl@3/)
+endif()
 include("${CMAKE_ROOT}/Modules/FindOpenSSL.cmake")
 
 ## Source
