@@ -2,8 +2,6 @@
 // Created by shawn on 1/25/2022.
 //
 
-
-#include <string>
 #include "../Common.h"
 
 SOLUTION(2015, 01, 1) {

@@ -3,9 +3,9 @@
 //
 
 #include <openssl/md5.h>
-#include <sstream>
 #include <cstring>
 #include "../Common.h"
+#include "../SolutionTesting.h"
 
 SOLUTION(2015, 04, 1) {
     unsigned char buffer[MD5_DIGEST_LENGTH];
@@ -42,11 +42,7 @@ SOLUTION(2015, 04, 2) {
     }
 }
 
-#ifdef TEST
-#include "../SolutionTesting.h"
-
 SOLUTION_TEST(2015, 04, 1, examples) {
     EXPECT_EQ("609043", INVOKE_SOLUTION(2015, 04, 1, "abcdef"));
     EXPECT_EQ("1048970", INVOKE_SOLUTION(2015, 04, 1, "pqrstuv"));
 }
-#endif

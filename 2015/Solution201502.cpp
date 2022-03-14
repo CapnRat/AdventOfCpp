@@ -2,9 +2,8 @@
 // Created by shawn on 1/25/2022.
 //
 
-#include <string>
-#include <sstream>
 #include "../Common.h"
+#include "../SolutionTesting.h"
 
 typedef std::tuple <int, int, int> dimensions;
 
@@ -55,9 +54,6 @@ SOLUTION(2015, 02, 2) {
     return std::to_string(accum);
 }
 
-#if TEST
-#include "../SolutionTesting.h"
-
 TEST(GetDimensionsTests, CanParseDimensions) {
     EXPECT_EQ(std::make_tuple(2, 3, 4), get_dimensions("2x3x4"));
     EXPECT_EQ(std::make_tuple(1, 1, 10), get_dimensions("1x1x10"));
@@ -76,4 +72,3 @@ SOLUTION_TEST(2015, 02, 2, examples) {
     EXPECT_EQ("14", INVOKE_SOLUTION(2015, 02, 2, "1x1x10"));
     EXPECT_EQ("48", INVOKE_SOLUTION(2015, 02, 2, "2x3x4\n1x1x10"));
 }
-#endif

@@ -8,6 +8,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
+#include <sstream>
 #include "SolutionRegistry.h"
 
 #endif //ADVENTOFCPP_COMMON_H

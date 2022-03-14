@@ -4,8 +4,8 @@
 
 #include <unordered_set>
 #include <unordered_map>
-#include <sstream>
 #include "../Common.h"
+#include "../SolutionTesting.h"
 
 SOLUTION(2015, 05, 1) {
     std::unordered_set<char> vowels{'a', 'e', 'i', 'o', 'u'};
@@ -81,9 +81,6 @@ SOLUTION(2015, 05, 2) {
     return std::to_string(nice_count);
 }
 
-#if TEST
-#include "../SolutionTesting.h"
-
 SOLUTION_TEST(2015, 05, 1, examples) {
     EXPECT_EQ("1", INVOKE_SOLUTION(2015, 05, 1, "ugknbfddgicrmopn"));
     EXPECT_EQ("1", INVOKE_SOLUTION(2015, 05, 1, "aaa"));
@@ -98,4 +95,3 @@ SOLUTION_TEST(2015, 05, 2, examples) {
     EXPECT_EQ("0", INVOKE_SOLUTION(2015, 05, 2, "uurcxstgmygtbstg"));
     EXPECT_EQ("0", INVOKE_SOLUTION(2015, 05, 2, "ieodomkazucvgmuy"));
 }
-#endif

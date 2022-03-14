@@ -5,6 +5,7 @@
 #include <unordered_set>
 #include <set>
 #include "../Common.h"
+#include "../SolutionTesting.h"
 
 struct point2 {
     int x, y;
@@ -65,9 +66,6 @@ SOLUTION(2015, 03, 2) {
     return std::to_string(visited.size());
 }
 
-#ifdef TEST
-#include "../SolutionTesting.h"
-
 SOLUTION_TEST(2015, 03, 1, examples) {
     EXPECT_EQ("2", INVOKE_SOLUTION(2015, 03, 1, ">"));
     EXPECT_EQ("4", INVOKE_SOLUTION(2015, 03, 1, "^>v<"));
@@ -79,4 +77,3 @@ SOLUTION_TEST(2015, 03, 2, examples) {
     EXPECT_EQ("3", INVOKE_SOLUTION(2015, 03, 2, "^>v<"));
     EXPECT_EQ("11", INVOKE_SOLUTION(2015, 03, 2, "^v^v^v^v^v"));
 }
-#endif
