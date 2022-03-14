@@ -87,6 +87,41 @@ SOLUTION(2015, 06, 1) {
     return std::to_string(std::count(*lights, *lights + sizeof(lights), true));
 }
 
+SOLUTION(2015, 06, 2) {
+    unsigned int lights[1000][1000] = {};
+
+    std::stringstream input_stream(input, std::ios_base::in);
+    std::string line;
+    while(std::getline(input_stream, line)) {
+        auto in = getInstruction(line);
+
+        for(int x = in.start.first; x <= in.end.first; x++) {
+            for(int y = in.start.second; y <= in.end.second; y++) {
+                switch (in.op) {
+                    case Off:
+                        if (lights[x][y] > 0)
+                            lights[x][y]--;
+                        break;
+                    case On:
+                        lights[x][y]++;
+                        break;
+                    case Toggle:
+                        lights[x][y] += 2;
+                        break;
+                }
+            }
+        }
+    }
+
+    unsigned int brightness = 0;
+    for(int i = 0; i < (sizeof(lights) / sizeof(unsigned int)); i++) {
+        brightness += (*lights)[i];
+    }
+
+    return std::to_string(brightness);
+}
+
+
 TEST(GetInstructionTests, CanParseInstructions) {
     EXPECT_EQ(
             Instruction(std::make_pair(0, 0), std::make_pair(999, 999), Operation::On),
@@ -101,4 +136,8 @@ TEST(GetInstructionTests, CanParseInstructions) {
 
 SOLUTION_TEST(2015, 06, 1, examples) {
     EXPECT_EQ("998996", INVOKE_SOLUTION(2015, 06, 1, "turn on 0,0 through 999,999\ntoggle 0,0 through 999,0\nturn off 499,499 through 500,500"));
+}
+
+SOLUTION_TEST(2015, 06, 2, examples) {
+    EXPECT_EQ("1001996", INVOKE_SOLUTION(2015, 06, 2, "turn on 0,0 through 999,999\ntoggle 0,0 through 999,0\nturn off 499,499 through 500,500"));
 }
