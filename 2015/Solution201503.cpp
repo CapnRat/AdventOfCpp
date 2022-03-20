@@ -16,7 +16,7 @@ struct point2 {
 };
 
 template<>
-struct std::hash<point2> {
+struct [[maybe_unused]]std::hash<point2> {
     std::size_t operator()(const point2& i) const noexcept {
         std::size_t h1 = std::hash<int>{}(i.x);
         std::size_t h2 = std::hash<int>{}(i.y);

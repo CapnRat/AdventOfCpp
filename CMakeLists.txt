@@ -18,6 +18,7 @@ if(APPLE)
     set(OPENSSL_ROOT_DIR /opt/homebrew/opt/openssl@3/)
 endif()
 include("${CMAKE_ROOT}/Modules/FindOpenSSL.cmake")
+add_compile_options(-Wno-deprecated)
 
 ## Source
 set(ADVENTOFCPP_SOURCES SolutionRegistry.cpp SolutionRegistry.h SolutionTesting.h 2015/Solution201501.cpp 2015/Solution201502.cpp 2015/Solution201503.cpp Common.h 2015/Solution201504.cpp 2015/Solution201505.cpp 2015/Solution201506.cpp)

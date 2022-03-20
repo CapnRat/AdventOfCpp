@@ -14,10 +14,11 @@ enum Operation {
 };
 
 struct Instruction {
-    Instruction(LightPos start, LightPos anEnd, Operation op) :
-        start(std::move(start)), end(std::move(anEnd)), op(op) {}
+    Instruction(LightPos start, LightPos end, Operation op) :
+        start(std::move(start)), end(std::move(end)), op(op) {}
 
-    Instruction() = default;
+    Instruction() :
+        start(std::pair(0, 0)), end(std::pair(0, 0)), op(Operation::Off) {}
 
     bool operator==(const Instruction &rhs) const {
         return start == rhs.start &&
@@ -124,13 +125,13 @@ SOLUTION(2015, 06, 2) {
 
 TEST(GetInstructionTests, CanParseInstructions) {
     EXPECT_EQ(
-            Instruction(std::make_pair(0, 0), std::make_pair(999, 999), Operation::On),
+            Instruction(std::pair(0, 0), std::pair(999, 999), Operation::On),
             getInstruction("turn on 0,0 through 999,999"));
     EXPECT_EQ(
-            Instruction(std::make_pair(0, 0), std::make_pair(999, 0), Operation::Toggle),
+            Instruction(std::pair(0, 0), std::pair(999, 0), Operation::Toggle),
             getInstruction("toggle 0,0 through 999,0"));
     EXPECT_EQ(
-            Instruction(std::make_pair(499, 499), std::make_pair(500, 500), Operation::Off),
+            Instruction(std::pair(499, 499), std::pair(500, 500), Operation::Off),
             getInstruction("turn off 499,499 through 500,500"));
 }
 

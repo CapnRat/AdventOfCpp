@@ -26,7 +26,7 @@ SOLUTION(2015, 05, 1) {
         bool has_double = false;
         bool has_combo = false;
 
-        for (int i = 0; i < line.size(); i++) {
+        for (unsigned int i = 0; i < line.size(); i++) {
             auto letter = line[i];
             if (vowels.contains(letter))
                 vowel_count++;

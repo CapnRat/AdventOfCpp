@@ -13,7 +13,7 @@ std::string get_input(uint id) {
     file.seekg(0, std::ios::end);
     contents.resize(file.tellg());
     file.seekg(0, std::ios::beg);
-    file.read(&contents[0], contents.size());
+    file.read(&contents[0], (std::streamsize)contents.size());
     file.close();
 
     return contents;
