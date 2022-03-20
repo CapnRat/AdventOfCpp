@@ -16,6 +16,7 @@ dimensions get_dimensions(const std::string& line) {
     return std::make_tuple(w, l, h);
 }
 
+SOLUTION_ANSWER(2015, 02, 1, "1598415")
 SOLUTION(2015, 02, 1) {
     std::stringstream input_stream(input, std::ios_base::in);
     std::string line;
@@ -35,6 +36,7 @@ SOLUTION(2015, 02, 1) {
     return std::to_string(accum);
 }
 
+SOLUTION_ANSWER(2015, 02, 2, "3812909")
 SOLUTION(2015, 02, 2) {
     std::stringstream input_stream(input, std::ios_base::in);
     std::string line;

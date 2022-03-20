@@ -3,7 +3,9 @@
 //
 
 #include "../Common.h"
+#include "../SolutionTesting.h"
 
+SOLUTION_ANSWER(2015, 01, 1, "138")
 SOLUTION(2015, 01, 1) {
     int floor = 0;
 
@@ -17,6 +19,7 @@ SOLUTION(2015, 01, 1) {
     return std::to_string(floor);
 }
 
+SOLUTION_ANSWER(2015, 01, 2, "1771")
 SOLUTION(2015, 01, 2) {
     int floor = 0;
 

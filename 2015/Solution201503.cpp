@@ -39,6 +39,7 @@ void move(point2& pos, const char& character) {
     }
 }
 
+SOLUTION_ANSWER(2015, 03, 1, "2081")
 SOLUTION(2015, 03, 1) {
     point2 pos{0, 0};
     std::unordered_set<point2> visited{pos};
@@ -51,6 +52,7 @@ SOLUTION(2015, 03, 1) {
     return std::to_string(visited.size());
 }
 
+SOLUTION_ANSWER(2015, 03, 2, "2341")
 SOLUTION(2015, 03, 2) {
     point2 santa{0, 0};
     point2 robot{0, 0};

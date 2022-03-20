@@ -11,4 +11,6 @@
 #include <sstream>
 #include "SolutionRegistry.h"
 
+std::string get_input(uint id);
+
 #endif //ADVENTOFCPP_COMMON_H

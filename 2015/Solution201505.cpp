@@ -7,6 +7,7 @@
 #include "../Common.h"
 #include "../SolutionTesting.h"
 
+SOLUTION_ANSWER(2015, 05, 1, "258")
 SOLUTION(2015, 05, 1) {
     std::unordered_set<char> vowels{'a', 'e', 'i', 'o', 'u'};
     std::unordered_map<char, char> combos{
@@ -51,6 +52,7 @@ SOLUTION(2015, 05, 1) {
     return std::to_string(nice_count);
 }
 
+SOLUTION_ANSWER(2015, 05, 2, "53")
 SOLUTION(2015, 05, 2) {
     std::stringstream input_stream(input, std::ios_base::in);
     std::string line;

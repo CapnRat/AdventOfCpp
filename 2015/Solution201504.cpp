@@ -7,6 +7,7 @@
 #include "../Common.h"
 #include "../SolutionTesting.h"
 
+SOLUTION_ANSWER(2015, 04, 1, "117946")
 SOLUTION(2015, 04, 1) {
     unsigned char buffer[MD5_DIGEST_LENGTH];
 
@@ -18,6 +19,7 @@ SOLUTION(2015, 04, 1) {
     }
 }
 
+SOLUTION_ANSWER(2015, 04, 2, "3938038")
 SOLUTION(2015, 04, 2) {
     unsigned char buffer[MD5_DIGEST_LENGTH];
     char testc_str[input.size() + 10]; // 10 max digits in an unsigned long, assume solution isn't larger than that

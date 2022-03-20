@@ -60,6 +60,7 @@ Instruction getInstruction (const std::string& line) {
     return in;
 }
 
+SOLUTION_ANSWER(2015, 06, 1, "569999")
 SOLUTION(2015, 06, 1) {
     bool lights[1000][1000] = {};
 
@@ -88,6 +89,7 @@ SOLUTION(2015, 06, 1) {
     return std::to_string(std::count(*lights, *lights + sizeof(lights), true));
 }
 
+SOLUTION_ANSWER(2015, 06, 2, "17836115")
 SOLUTION(2015, 06, 2) {
     unsigned int lights[1000][1000] = {};
 
